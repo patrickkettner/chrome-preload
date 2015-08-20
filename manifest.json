@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "preloader",
+  "version": "0.0.1",
+  "description": "aggressively preload assets",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "run_at": "document_start",
+    "matches": ["*://*/*"],
+    "js": ["content.js"]
+  }],
+  "permissions": [
+     "*://*/*",
+    "background",
+    "storage",
+    "tabs",
+    "webRequest"
+  ]
+}
